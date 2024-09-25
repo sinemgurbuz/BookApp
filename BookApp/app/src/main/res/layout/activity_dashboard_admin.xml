@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DashboardAdminActivity"
+    android:background="@drawable/background">
+    <!--kullanıcı kontrol paneli-->
+
+    <!--TOOLBAR-->
+    <RelativeLayout
+        android:id="@+id/toolbarRL"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/shape_toolbar02">
+
+        <ImageButton
+            android:id="@+id/profilebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_person_white"/>
+
+        <TextView
+            android:id="@+id/titleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YÖNETİCİ PANELİ"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+        <ImageButton
+            android:id="@+id/logoutBtn"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_logout_white"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"/>
+    </RelativeLayout>
+    <!--?actionBarSize: Android platformundan doğrudan gelen bir özelliktir ve genellikle bir
+    görünümün yüksekliğini, varsayılan olarak action bar yüksekliği ile aynı yapmak için kullanılır.-->
+
+
+    <!--KATEGORİ ARAMA -->
+    <EditText
+        android:id="@+id/searchEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarRL"
+        android:hint="ARA"
+        android:drawableStart="@drawable/ic_search_gray"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:textColorHint="@color/gray01"/>
+
+
+    <!--kategorileri görüntüleme-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/CategoriesRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/row_category"
+        android:layout_margin="5dp"
+        android:layout_below="@id/searchEt"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_above="@id/battomll" />
+    <!-- layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    özelliği, RecyclerView içindeki öğelerin dikey bir liste olarak
+    düzenlenmesini sağlar.-->
+    <!--tools:listitem="@layout/row_category":Bu özellik, genellikle tasarım arayüzünde
+    yer alan RecyclerView gibiliste görünümlerini düzenlerken kullanılır.Örneğin, bir
+     liste öğesinin nasıl görüneceğini ve nasıl yerleştirileceğini belirlemek için
+     kullanılır. tasarım aracı tarafından kullanılırken gerçek veriye ihtiyaç duymadan
+   tasarımı daha iyi görselleştirmeye yardımcı olur.-->
+    <LinearLayout
+        android:id="@+id/battomll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"> <!-- yatay da hizzalar-->
+        <!-- görünümü ekranın alt kısmına sabitlemek için kullanılır-->
+
+        <!-- kategory ekle-->
+        
+        <Button
+            android:id="@+id/addCategoryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+KATEGORİ EKLE"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_button01"
+            android:minHeight="50dp"
+            android:textSize="17sp"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+        <!-- textAllCaps:bazı durumlarda metnin orijinal biçimini korumak isteyebilirsiniz.
+         Bu durumda android:textAllCaps özelliğini "false" olarak ayarlayarak metnin
+         büyük harfe dönüştürülmesini devre dışı bırakabilirsiniz.-->
+
+        <!-- PDF EKLE-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addpdfFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pdf_ad_white"
+            app:tint="@color/white"
+            app:fabCustomSize="50dp"
+            android:backgroundTint="@color/purple_500"/>
+
+        <!--Floating Action Button genellikle 56dp x 56dp boyutunda olur,
+        ancak belirli bir durumda daha küçük veya daha büyük bir FAB
+        gerekebilir. Bu durumda, app:fabCustomSize özelliği kullanılarak
+        özel bir boyut belirtilebilir.-->
+
+
+
+
+
+    </LinearLayout>
+    
+
+</RelativeLayout>
