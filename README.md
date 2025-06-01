@@ -1,0 +1,2 @@
+Teknoloji ile okuma deneyimini zenginleştirmeyi hedeflediğim bu uygulama, kullanıcıların kitap okuyabileceği, kitap yükleyebileceği, profillerini düzenleyebileceği ve favori kitaplarını ekleyebileceği bir platform sunuyor.
+Kullanıcılar e-posta ile hesaplarını doğrulayabilir ve parolalarını sıfırlayabilirler. Java ile kodladığım bu projede, veritabanı, depolama ve kimlik doğrulama işlemleri için Firebase kullandım. Ayrıca, uygulama kullanıcıların kitap aramalarını ve kategori eklemelerini kolaylaştırarak zengin bir okuma deneyimi sağlıyor.
